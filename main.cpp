@@ -19,8 +19,6 @@ void Task(int taskNumber) {
     completedTasksFile << "Task " << taskNumber << ": " << taskName << endl;
     completedTasksFile.close();
     // Tumer
-    cout << "Work on task " << taskNumber << " for 25 minutes." << endl;
-    this_thread::sleep_for(chrono::minutes(25));
 
     // Display a message
     switch (taskNumber) {
@@ -38,8 +36,10 @@ void Task(int taskNumber) {
             break;
         default:
             cout << "Please choose a valid number between 1 and 4." << endl;
-            return; // Exit function
+            return;
     }
+cout << "Work on task " << taskNumber << " for 25 minutes." << endl;
+    this_thread::sleep_for(chrono::minutes(25));
 }
 
 int main() {
